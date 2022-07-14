@@ -15,5 +15,8 @@ format:
     theme: solar
     css: styles.css
 
+execute:
+  freeze: auto
+
 
 
