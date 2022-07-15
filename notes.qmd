@@ -1,0 +1,12 @@
+---
+title: "Notes"
+listing:
+  contents: posts/notes/*.qmd
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: true
+  filter-ui: false
+page-layout: full
+title-block-banner: false
+---

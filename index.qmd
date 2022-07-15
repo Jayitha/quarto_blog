@@ -1,14 +1,27 @@
 ---
-title: "Blog"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "About"
+image: profile.jpg
+about:
+  template: solana
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/jayitha4
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
+    - icon: github
+      text: Github
+      href: https://github.com/jayitha
+    - icon: envelope-fill
+      text: Email
+      href: mailto:jayitha.c@research.iiit.ac.in
+    - icon: file-person-fill
+      text: CV
+      href: https://drive.google.com/file/d/1DUe4Z3uklhMKpZK_ruzkPrTPcIVuMq6k/view?usp=sharing
+
 ---
+
+About this blog
 
 
