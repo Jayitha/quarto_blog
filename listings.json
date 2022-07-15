@@ -1,9 +1,12 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/paper-summaries.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/posts/paper summaries/optimal-end-biased-histograms.html"
     ]
+  },
+  {
+    "listing": "/notes.html",
+    "items": []
   }
 ]

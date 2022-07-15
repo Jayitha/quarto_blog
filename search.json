@@ -1,30 +1,44 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
+    "objectID": "paper-summaries.html",
+    "href": "paper-summaries.html",
+    "title": "Paper Summaries",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 14, 2022\n\n\nJayitha Cherapanamjeri\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/paper summaries/optimal-end-biased-histograms.html",
+    "href": "posts/paper summaries/optimal-end-biased-histograms.html",
+    "title": "Optimal End-Biased Histograms",
+    "section": "",
+    "text": "This is a post with executable code.\n\\[err(H) = \\sum_{r \\in S} \\;\\]"
+  },
+  {
+    "objectID": "posts/paper summaries/optimal-end-biased-histograms.html#some-heading",
+    "href": "posts/paper summaries/optimal-end-biased-histograms.html#some-heading",
+    "title": "Optimal End-Biased Histograms",
+    "section": "Some Heading",
+    "text": "Some Heading\nsome text some text some text"
+  },
+  {
+    "objectID": "posts/paper summaries/optimal-end-biased-histograms.html#some-other-heading",
+    "href": "posts/paper summaries/optimal-end-biased-histograms.html#some-other-heading",
+    "title": "Optimal End-Biased Histograms",
+    "section": "Some other heading",
+    "text": "Some other heading\ns\nsomethng\nsomething"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "About",
     "section": "",
     "text": "About this blog"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "Notes",
     "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJul 14, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJul 11, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "No matching items"
   }
 ]
