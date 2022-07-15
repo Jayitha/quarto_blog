@@ -1,1 +1,1 @@
-Sitemap: https://Jayitha.github.io/quarto_blog/sitemap.xml
+Sitemap: https://github.com/Jayitha/quarto_blog/sitemap.xml
