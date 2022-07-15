@@ -65,9 +65,9 @@ ul.task-list{list-style: none;}
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -130,9 +130,11 @@ ul.task-list{list-style: none;}
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="paper summary">paper summary <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -177,7 +179,7 @@ ul.task-list{list-style: none;}
   </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="paper summary" data-listing-date-sort="1657756800000" data-listing-file-modified-sort="1657863018869" data-listing-reading-time-sort="0.1">
+<div class="quarto-post image-right" data-index="0" data-categories="paper summary" data-listing-date-sort="1657756800000" data-listing-file-modified-sort="1657864187878" data-listing-reading-time-sort="0.1">
 <div class="body">
 <a href="./posts/paper summaries/optimal-end-biased-histograms.html">
 <h3 class="no-anchor listing-title">
@@ -186,6 +188,13 @@ Optimal End-Biased Histograms
 <div class="listing-subtitle">
 
 </div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('paper summary'); return false;">
+paper summary
+</div>
+</div>
+<a href="./posts/paper summaries/optimal-end-biased-histograms.html">
 <div class="listing-description">
 This is a post with executable code.
 </div>
