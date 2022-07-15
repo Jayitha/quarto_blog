@@ -4,7 +4,7 @@ listing:
   contents: posts/notes/*.qmd
   sort: "date desc"
   type: default
-  categories: false
+  categories: true
   sort-ui: true
   filter-ui: false
 page-layout: full
