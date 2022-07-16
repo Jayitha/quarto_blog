@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.28">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jayitha Cherapanamjeri">
+<meta name="dcterms.date" content="2022-07-14">
+<meta name="description" content="Behar, Rachel, and Sara Cohen. “Optimal End-Biased Histograms for Hierarchical Data.” Proceedings of the 29th ACM International Conference on Information &amp; Knowledge Management. 2020">
+
+<title>Jayitha Cherapanamjeri - Optimal End-Biased Histograms for Hierarchical Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="floating nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Jayitha Cherapanamjeri</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../paper-summaries.html">Paper Summaries</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notes.html">Notes</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jayitha"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/jayitha4"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Optimal End-Biased Histograms for Hierarchical Data</h1>
+                  <div>
+        <div class="description">
+          Behar, Rachel, and Sara Cohen. “Optimal End-Biased Histograms for Hierarchical Data.” Proceedings of the 29th ACM International Conference on Information &amp; Knowledge Management. 2020
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Rachel Beher</div>
+                <div class="quarto-category">Sara Cohen</div>
+                <div class="quarto-category">CIKM</div>
+                <div class="quarto-category">2020</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jayitha Cherapanamjeri </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 14, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#contributions" id="toc-contributions" class="nav-link active" data-scroll-target="#contributions">Contributions</a></li>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">Definitions</a></li>
+  <li><a href="#greedy-algorithm" id="toc-greedy-algorithm" class="nav-link" data-scroll-target="#greedy-algorithm">Greedy Algorithm</a></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+<ul>
+<li>adapts <em>end-biased histograms</em> to trees</li>
+<li>end-biased histograms have a good trade-off between accuracy and limited storage requirements</li>
+<li>some high and low frequencies are accurately represented whereas the middle ones are approximated with one single bucket</li>
+<li><em>hierarchical data</em> describes information with a hierarchy where the leaves are numerical data</li>
+</ul>
+<section id="contributions" class="level3">
+<h3 class="anchored" data-anchor-id="contributions">Contributions</h3>
+<ol type="1">
+<li>Introduce notion of <em>hierarchical end-biased histograms</em> and define optimal problem</li>
+<li>Develops a fast greedy algorithm and a slower (polynomial) optimal algorithm</li>
+<li>Experimentally validates solution</li>
+</ol>
+</section>
+<section id="definitions" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="definitions">Definitions</h3>
+<dl>
+<dt><strong>Hierarchical Data</strong></dt>
+<dd>
+A data tree is a <span class="math inline">\(6\)</span>-tuple of the form <span class="math inline">\(T = (V, E, r, V_0, l, \alpha)\)</span> where <span class="math inline">\((V, E)\)</span> is a tree rooted at <span class="math inline">\(r \in V\)</span> with leaves <span class="math inline">\(V_0 \subseteq V\)</span>, <span class="math inline">\(l\)</span> associates each node in <span class="math inline">\(V\)</span> with a label and <span class="math inline">\(\alpha : V_0 \longrightarrow \mathbf{R}\)</span> associaes each leaf node with a value
+</dd>
+</dl>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">The figure represents sample tree data. Siblings are ordered based on their values. Note that the value function <span class="math inline">\(\alpha\)</span> is extended to non-leaf nodes, the value of a non-leaf node is the average of all their children nodes.</span></div></div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">%%{init: {'theme': 'neutral', 'flowchart':{'nodeSpacing': 30}} }%%
+graph TD
+v0["v0: 25"]
+v1["v1: 17"]
+v2["v2: 22"]
+v3["v3: 24"]
+v4["v4: 25"]
+v5["v5: 37"]
+v6["v6: 1"]
+v7["v7: 33"]
+v8["v8: 24"]
+v9["v9: 26"]
+v10["v10: 35"]
+v11["v11: 39"]
+v0 --- v1
+v0 --- v2
+v0 --- v3
+v0 --- v4
+v0 --- v5
+v1 --- v6
+v1 --- v7
+v4 --- v8
+v4 --- v9
+v5 --- v10
+v5 --- v11
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>Additionally, <span class="math inline">\(desc(v)\)</span>, <span class="math inline">\(anc(v)\)</span>, <span class="math inline">\(par(v)\)</span>, <span class="math inline">\(chld(v)\)</span>, <span class="math inline">\(first(v)\)</span>, <span class="math inline">\(last(v)\)</span>, <span class="math inline">\(prev(v)\)</span>, <span class="math inline">\(next(v)\)</span> and <span class="math inline">\(sib(v)\)</span> denote the descendants, ancestors (including <span class="math inline">\(v\)</span>), parent, children, first child, last child, previous sibling, next sibling and all siblings of node <span class="math inline">\(v\)</span> respectively.</p>
+<dl>
+<dt><strong>Bucket</strong></dt>
+<dd>
+A bucket <span class="math inline">\(b\)</span> is a set of <em>consecutive sibling nodes</em> where consecutiveness is defined by the ordering of node values. If <span class="math inline">\(b\)</span> contains a single node, then it is a <em>singleton</em>
+</dd>
+<dt><strong>End-biased Histograms</strong></dt>
+<dd>
+Let <span class="math inline">\(H\)</span> be a set of buckets over hierarchical dataset <span class="math inline">\(T\)</span>. <span class="math inline">\(H_v\)</span> denotes the subset of <span class="math inline">\(H\)</span> which consists of buckets of <span class="math inline">\(chld(v)\)</span> <span class="math display">\[H_v = \{b \in H \mid b \subseteq chld(v)\}\]</span> <span class="math inline">\(H\)</span> has the <em>end-biased property</em> with respect to <span class="math inline">\(v\)</span> if either <span class="math inline">\(H_v = \emptyset\)</span> or
+</dd>
+</dl>
+<ol type="1">
+<li><span class="math inline">\(H_v\)</span> contains all nodes in <span class="math inline">\(chld(v)\)</span> <span class="math inline">\(\left (chld(v) = \bigcup_{b \in H_v} b \right )\)</span> and<br>
+</li>
+<li>there is at most one non-singleton bucket in <span class="math inline">\(H_v\)</span></li>
+</ol>
+<p>Additionally, <span class="math inline">\(H\)</span> <em>explicitly summarizes</em> node <span class="math inline">\(v\)</span> if <span class="math inline">\(\{v\}\)</span> is a singleton bucket in <span class="math inline">\(H\)</span>. <span class="math inline">\(H\)</span> is an <em>hierarchical end-biased histogram</em> of <span class="math inline">\(T\)</span> if for every node <span class="math inline">\(v\)</span> in <span class="math inline">\(T\)</span></p>
+<ol type="1">
+<li><span class="math inline">\(H\)</span> has the end-biased property w.r.t. <span class="math inline">\(v\)</span> and</li>
+<li>if <span class="math inline">\(H\)</span> explicitly summarizes <span class="math inline">\(v\)</span>, then <span class="math inline">\(H\)</span> also explicitly summarizes <span class="math inline">\(par(v)\)</span></li>
+</ol>
+<p>For instance <span class="math inline">\(\{\{v_0\}, \{v_1\}, \{v_2\}, \{v_3, v_4\}, \{v_5\}\}\)</span> is an end-biased histogram because <span class="math inline">\(H_v = \emptyset\)</span> for all <span class="math inline">\(v \neq v_0\)</span> and the two conditions are satisfied when <span class="math inline">\(v = v_0\)</span></p>
+<dl>
+<dt><strong>Estimated Error of a Histogram</strong></dt>
+<dd>
+<span class="math inline">\(b \in H\)</span> is the <em>bucket</em> of <span class="math inline">\(v\)</span>, if <span class="math inline">\(b\)</span> is the bucket that contains the closest ancestor of <span class="math inline">\(v\)</span> (<span class="math inline">\(bucket(v)\)</span>). <span class="math inline">\(leaves(b)\)</span> is the set of leaves <span class="math inline">\(v\)</span> for which <span class="math inline">\(bucket(v) = b\)</span>
+</dd>
+</dl>
+<p><em>estimated value</em> for <span class="math inline">\(b\)</span> given <span class="math inline">\(H\)</span> (<span class="math inline">\(est(b)\)</span>) is average value of <span class="math inline">\(\alpha(v)\)</span> for all <span class="math inline">\(v \in leaves(b)\)</span></p>
+<p><span class="math display">\[err(H) = \sum_{v \in V_0} \left ( \alpha(v) - est(bucket(v))\right)^2\]</span></p>
+<p><strong>Given a data tree <span class="math inline">\(T\)</span> and a size bound <span class="math inline">\(k\)</span>, find a histogram <span class="math inline">\(H\)</span> of <span class="math inline">\(T\)</span>, such that <span class="math inline">\(\lvert H \rvert \leq k\)</span> and <span class="math inline">\(err(H)\)</span> is minimal</strong></p>
+</section>
+<section id="greedy-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="greedy-algorithm">Greedy Algorithm</h3>
+<ul>
+<li>Algorithm maintains result <span class="math inline">\(H\)</span> and a priority queue <span class="math inline">\(Q\)</span> of potential singleton buckets that can be added to <span class="math inline">\(H\)</span></li>
+<li>Incrementally adds buckets from <span class="math inline">\(Q\)</span> to <span class="math inline">\(H\)</span> until the size of <span class="math inline">\(H\)</span> is <span class="math inline">\(k\)</span></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -4,41 +4,41 @@
     "href": "paper-summaries.html",
     "title": "Paper Summaries",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\n\n\npaper summary\n\n\n\n\n\n\n\n\n\n\n\nJul 14, 2022\n\n\nJayitha Cherapanamjeri\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\n\n\nRachel Beher\n\n\nSara Cohen\n\n\nCIKM\n\n\n2020\n\n\n\n\nBehar, Rachel, and Sara Cohen. “Optimal End-Biased Histograms for Hierarchical Data.” Proceedings of the 29th ACM International Conference on Information & Knowledge Management. 2020\n\n\n\n\n\n\nJul 14, 2022\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/paper summaries/optimal-end-biased-histograms.html",
-    "href": "posts/paper summaries/optimal-end-biased-histograms.html",
-    "title": "Optimal End-Biased Histograms",
+    "objectID": "posts/paper summaries/optimal-end-biased-histograms-for-hierarchical-data.html",
+    "href": "posts/paper summaries/optimal-end-biased-histograms-for-hierarchical-data.html",
+    "title": "Optimal End-Biased Histograms for Hierarchical Data",
     "section": "",
-    "text": "This is a post with executable code.\n\\[err(H) = \\sum_{r \\in S} \\;\\]"
+    "text": "Contributions\n\nIntroduce notion of hierarchical end-biased histograms and define optimal problem\nDevelops a fast greedy algorithm and a slower (polynomial) optimal algorithm\nExperimentally validates solution\n\n\n\nDefinitions\n\nHierarchical Data\n\nA data tree is a \\(6\\)-tuple of the form \\(T = (V, E, r, V_0, l, \\alpha)\\) where \\((V, E)\\) is a tree rooted at \\(r \\in V\\) with leaves \\(V_0 \\subseteq V\\), \\(l\\) associates each node in \\(V\\) with a label and \\(\\alpha : V_0 \\longrightarrow \\mathbf{R}\\) associaes each leaf node with a value\n\n\nThe figure represents sample tree data. Siblings are ordered based on their values. Note that the value function \\(\\alpha\\) is extended to non-leaf nodes, the value of a non-leaf node is the average of all their children nodes.\n\n\n\n\n%%{init: {'theme': 'neutral', 'flowchart':{'nodeSpacing': 30}} }%%\ngraph TD\nv0[\"v0: 25\"]\nv1[\"v1: 17\"]\nv2[\"v2: 22\"]\nv3[\"v3: 24\"]\nv4[\"v4: 25\"]\nv5[\"v5: 37\"]\nv6[\"v6: 1\"]\nv7[\"v7: 33\"]\nv8[\"v8: 24\"]\nv9[\"v9: 26\"]\nv10[\"v10: 35\"]\nv11[\"v11: 39\"]\nv0 --- v1\nv0 --- v2\nv0 --- v3\nv0 --- v4\nv0 --- v5\nv1 --- v6\nv1 --- v7\nv4 --- v8\nv4 --- v9\nv5 --- v10\nv5 --- v11\n\n\n\n\n\n\n\n\nAdditionally, \\(desc(v)\\), \\(anc(v)\\), \\(par(v)\\), \\(chld(v)\\), \\(first(v)\\), \\(last(v)\\), \\(prev(v)\\), \\(next(v)\\) and \\(sib(v)\\) denote the descendants, ancestors (including \\(v\\)), parent, children, first child, last child, previous sibling, next sibling and all siblings of node \\(v\\) respectively.\n\nBucket\n\nA bucket \\(b\\) is a set of consecutive sibling nodes where consecutiveness is defined by the ordering of node values. If \\(b\\) contains a single node, then it is a singleton\n\nEnd-biased Histograms\n\nLet \\(H\\) be a set of buckets over hierarchical dataset \\(T\\). \\(H_v\\) denotes the subset of \\(H\\) which consists of buckets of \\(chld(v)\\) \\[H_v = \\{b \\in H \\mid b \\subseteq chld(v)\\}\\] \\(H\\) has the end-biased property with respect to \\(v\\) if either \\(H_v = \\emptyset\\) or\n\n\n\n\\(H_v\\) contains all nodes in \\(chld(v)\\) \\(\\left (chld(v) = \\bigcup_{b \\in H_v} b \\right )\\) and\n\nthere is at most one non-singleton bucket in \\(H_v\\)\n\nAdditionally, \\(H\\) explicitly summarizes node \\(v\\) if \\(\\{v\\}\\) is a singleton bucket in \\(H\\). \\(H\\) is an hierarchical end-biased histogram of \\(T\\) if for every node \\(v\\) in \\(T\\)\n\n\\(H\\) has the end-biased property w.r.t. \\(v\\) and\nif \\(H\\) explicitly summarizes \\(v\\), then \\(H\\) also explicitly summarizes \\(par(v)\\)\n\nFor instance \\(\\{\\{v_0\\}, \\{v_1\\}, \\{v_2\\}, \\{v_3, v_4\\}, \\{v_5\\}\\}\\) is an end-biased histogram because \\(H_v = \\emptyset\\) for all \\(v \\neq v_0\\) and the two conditions are satisfied when \\(v = v_0\\)\n\nEstimated Error of a Histogram\n\n\\(b \\in H\\) is the bucket of \\(v\\), if \\(b\\) is the bucket that contains the closest ancestor of \\(v\\) (\\(bucket(v)\\)). \\(leaves(b)\\) is the set of leaves \\(v\\) for which \\(bucket(v) = b\\)\n\n\nestimated value for \\(b\\) given \\(H\\) (\\(est(b)\\)) is average value of \\(\\alpha(v)\\) for all \\(v \\in leaves(b)\\)\n\\[err(H) = \\sum_{v \\in V_0} \\left ( \\alpha(v) - est(bucket(v))\\right)^2\\]\nGiven a data tree \\(T\\) and a size bound \\(k\\), find a histogram \\(H\\) of \\(T\\), such that \\(\\lvert H \\rvert \\leq k\\) and \\(err(H)\\) is minimal\n\n\nGreedy Algorithm\n\nAlgorithm maintains result \\(H\\) and a priority queue \\(Q\\) of potential singleton buckets that can be added to \\(H\\)\nIncrementally adds buckets from \\(Q\\) to \\(H\\) until the size of \\(H\\) is \\(k\\)"
   },
   {
-    "objectID": "posts/paper summaries/optimal-end-biased-histograms.html#some-heading",
-    "href": "posts/paper summaries/optimal-end-biased-histograms.html#some-heading",
-    "title": "Optimal End-Biased Histograms",
-    "section": "Some Heading",
-    "text": "Some Heading\nsome text some text some text"
+    "objectID": "posts/notes/text-and-typography.html",
+    "href": "posts/notes/text-and-typography.html",
+    "title": "Text and Typography",
+    "section": "",
+    "text": "make footnotes as sidenotes\n\nset light and black themes\n\nadd more admonitions"
   },
   {
-    "objectID": "posts/paper summaries/optimal-end-biased-histograms.html#some-other-heading",
-    "href": "posts/paper summaries/optimal-end-biased-histograms.html#some-other-heading",
-    "title": "Optimal End-Biased Histograms",
-    "section": "Some other heading",
-    "text": "Some other heading\ns\nsomethng\nsomething"
+    "objectID": "posts/notes/text-and-typography.html#header-2",
+    "href": "posts/notes/text-and-typography.html#header-2",
+    "title": "Text and Typography",
+    "section": "Header 2",
+    "text": "Header 2\n\nHeader 3\n\nHeader 4\n\nHeader 5\n\nHeader 6\nhttps://quarto.org\nQuarto\n\nunordered list\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1\n\n\nitem 2\nContinued (indent 4 spaces)\n\n\nordered list\nitem 2\n\nsub-item 1\n\nsub-sub-item 1\n\n\n\n\nA list whose numbering\n\ncontinues after\n\nan interruption\n\n\nterm\n\ndefinition\n\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n1 + 1\ninline math: \\(E = mc^{2}\\)\ndisplay math:\n\\[E = mc^{2}\\]\n\n\\[\n\\def\\RR{{\\bf R}}\n\\def\\bold#1{{\\bf #1}}\n\\]\n\n\\(\\RR\\)\n\n\n\n\n%%{init: {'theme': 'dark' } }%%\nflowchart LR\n  A[Hard edge] --> B(Round edge)\n  B --> C{Decision}\n  C --> D[Result one]\n  C --> E[Result two]\n\n\n\n\n\n\n\n\n\nThis content can be styled with a border\n\nThis is text with special formatting\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\nBlockquote\n\n\nDiv\n\nLine Block\n  Spaces and newlines\n  are preserved\nendash: – emdash: —\n\n\n\nsome caption\n\n\n\n\n\n\n\n\n\nList One\n\nItem A\nItem B\nItem C\n\n\n\nList Two\n\nItem X\nItem Y\nItem Z\n\n\n\n\n\n\n\n\nItem X\nItem Y\nItem Z\n\n\n\nLorem ipsum dolor sit amet, consectetur1 adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa.1 somethhing something something\n\n\n\n\n\nTable 1: My Caption\n\n\nCol1\nCol2\nCol3\n\n\n\n\nA\nB\nC\n\n\nE\nF\nG\n\n\nA\nG\nG\n\n\n\n\nSee Table 1.\n\n\nTable 2: Main Caption\n\n\n\n\n(a) First Table\n\n\nCol1\nCol2\nCol3\n\n\n\n\nA\nB\nC\n\n\nE\nF\nG\n\n\nA\nG\nG\n\n\n\n\n\n\n(b) Second Table\n\n\nCol1\nCol2\nCol3\n\n\n\n\nA\nB\nC\n\n\nE\nF\nG\n\n\nA\nG\nG\n\n\n\n\n\n\nSee Table 2 for details, especially Table 2 (b).\n\n\n\n\n\n\n\n\nFruit\nPrice\nAdvantages\n\n\n\n\nBananas\n$1.34\n\nbuilt-in wrapper\nbright color\n\n\n\nOranges\n$2.10\n\ncures scurvy\ntasty\n\n\n\n\n\n\n\n\n\n\n\n\nRight\nLeft\nCentered\n\n\n\n\nBananas\n$1.34\nbuilt-in wrapper\n\n\n\n\n\n\n\n\n\n\n\nRight\nLeft\nCentered\n\n\n\n\n\n\n\n\n\n\n\nG\n\n  \n\nrun\n\n run   \n\nintr\n\n intr   \n\nrun–intr\n\n   \n\nkernel\n\n kernel   \n\nrun–kernel\n\n   \n\nrunbl\n\n runbl   \n\nintr–runbl\n\n   \n\nrunbl–run\n\n   \n\nzombie\n\n zombie   \n\nkernel–zombie\n\n   \n\nsleep\n\n sleep   \n\nkernel–sleep\n\n   \n\nrunmem\n\n runmem   \n\nkernel–runmem\n\n   \n\nsleep–runmem\n\n   \n\nswap\n\n swap   \n\nsleep–swap\n\n   \n\nrunswap\n\n runswap   \n\nswap–runswap\n\n   \n\nrunswap–runmem\n\n   \n\nnew\n\n new   \n\nrunswap–new\n\n   \n\nnew–runmem\n\n  \n\n\nFigure 1: This is a simple graphviz graph.\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nHow to make footnotes as sidenotes\n\n\n\n\nWe know from the first fundamental theorem of calculus that for \\(x\\) in \\([a, b]\\):\n\\[\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).\\]\n\nRPython\n\n\nfizz_buzz <- function(fbnums = 1:50) {\n  output <- dplyr::case_when(\n    fbnums %% 15 == 0 ~ \"FizzBuzz\",\n    fbnums %% 3 == 0 ~ \"Fizz\",\n    fbnums %% 5 == 0 ~ \"Buzz\",\n    TRUE ~ as.character(fbnums)\n  )\n  print(output)\n}\n\n\ndef fizz_buzz(num):\n  if num % 15 == 0:\n    print(\"FizzBuzz\")\n  elif num % 5 == 0:\n    print(\"Buzz\")\n  elif num % 3 == 0:\n    print(\"Fizz\")\n  else:\n    print(num)"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "About",
     "section": "",
-    "text": "About this blog"
+    "text": "italics something"
   },
   {
     "objectID": "notes.html",
     "href": "notes.html",
     "title": "Notes",
     "section": "",
-    "text": "No matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\n\n\ntypography\n\n\n\n\nPost demonstrates the available text and typography for this website\n\n\n\n\n\n\nJul 14, 2022\n\n\n\n\n\n\nNo matching items"
   }
 ]

@@ -1,1 +1,11 @@
 /* css styles */
+em{
+  color: #ff4500;
+}
+b, strong {
+   color: #8866aa;
+}
+hl{
+  color: #000000;
+  background-color: yellow;
+}

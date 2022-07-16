@@ -2,11 +2,13 @@
   {
     "listing": "/paper-summaries.html",
     "items": [
-      "/posts/paper summaries/optimal-end-biased-histograms.html"
+      "/posts/paper summaries/optimal-end-biased-histograms-for-hierarchical-data.html"
     ]
   },
   {
     "listing": "/notes.html",
-    "items": []
+    "items": [
+      "/posts/notes/text-and-typography.html"
+    ]
   }
 ]

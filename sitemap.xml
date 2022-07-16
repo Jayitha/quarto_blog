@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/Jayitha/quarto_blog/paper-summaries.html</loc>
-    <lastmod>2022-07-15T05:49:58.278Z</lastmod>
+    <lastmod>2022-07-16T09:49:32.592Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Jayitha/quarto_blog/posts/paper summaries/optimal-end-biased-histograms.html</loc>
-    <lastmod>2022-07-15T05:49:58.906Z</lastmod>
+    <loc>https://github.com/Jayitha/quarto_blog/posts/paper summaries/optimal-end-biased-histograms-for-hierarchical-data.html</loc>
+    <lastmod>2022-07-16T09:49:33.312Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Jayitha/quarto_blog/posts/notes/text-and-typography.html</loc>
+    <lastmod>2022-07-16T09:49:34.196Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Jayitha/quarto_blog/index.html</loc>
-    <lastmod>2022-07-15T05:49:59.222Z</lastmod>
+    <lastmod>2022-07-16T09:49:34.624Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Jayitha/quarto_blog/notes.html</loc>
-    <lastmod>2022-07-15T05:49:59.542Z</lastmod>
+    <lastmod>2022-07-16T09:49:35.132Z</lastmod>
   </url>
 </urlset>
