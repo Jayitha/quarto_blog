@@ -7,6 +7,12 @@ listing:
   categories: true
   sort-ui: true
   filter-ui: false
+  fields: 
+    - title
+    - subtitle
+    - description
+    - date
+    - categories
 page-layout: full
 title-block-banner: false
 ---

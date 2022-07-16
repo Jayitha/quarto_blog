@@ -1,0 +1,88 @@
+---
+title: "Optimal End-Biased Histograms for Hierarchical Data"
+author: "Jayitha Cherapanamjeri"
+date: "2022-07-14"
+description: "Behar, Rachel, and Sara Cohen. \"Optimal End-Biased Histograms for Hierarchical Data.\" Proceedings of the 29th ACM International Conference on Information & Knowledge Management. 2020"
+categories: [Rachel Beher, Sara Cohen, CIKM, 2020]
+fig-cap-location: margin
+reference-location: margin
+citation-location: margin
+toc: true
+toc-location: left
+---
+
+- adapts _end-biased histograms_ to trees
+- end-biased histograms have a good trade-off between accuracy and limited storage requirements
+- some high and low frequencies are accurately represented whereas the middle ones are approximated with one single bucket
+- _hierarchical data_ describes information with a hierarchy where the leaves are numerical data
+
+### Contributions
+1. Introduce notion of _hierarchical end-biased histograms_ and define optimal problem
+2. Develops a fast greedy algorithm and a slower (polynomial) optimal algorithm 
+3. Experimentally validates solution
+
+### Definitions
+
+**Hierarchical Data**
+:   A data tree is a $6$-tuple of the form $T = (V, E, r, V_0, l, \alpha)$ where $(V, E)$ is a tree rooted at $r \in V$ with leaves $V_0 \subseteq V$, $l$ associates each node in $V$ with a label and $\alpha : V_0 \longrightarrow \mathbf{R}$ associaes each leaf node with a value
+
+[The figure represents sample tree data. Siblings are ordered based on their values. Note that the value function $\alpha$ is extended to non-leaf nodes, the value of a non-leaf node is the average of all their children nodes.]{.aside}
+```{mermaid}
+%%{init: {'theme': 'neutral', 'flowchart':{'nodeSpacing': 30}} }%%
+graph TD
+v0["v0: 25"]
+v1["v1: 17"]
+v2["v2: 22"]
+v3["v3: 24"]
+v4["v4: 25"]
+v5["v5: 37"]
+v6["v6: 1"]
+v7["v7: 33"]
+v8["v8: 24"]
+v9["v9: 26"]
+v10["v10: 35"]
+v11["v11: 39"]
+v0 --- v1
+v0 --- v2
+v0 --- v3
+v0 --- v4
+v0 --- v5
+v1 --- v6
+v1 --- v7
+v4 --- v8
+v4 --- v9
+v5 --- v10
+v5 --- v11
+```
+
+
+Additionally, $desc(v)$, $anc(v)$, $par(v)$, $chld(v)$, $first(v)$, $last(v)$, $prev(v)$, $next(v)$ and $sib(v)$ denote the descendants, ancestors (including $v$), parent, children, first child, last child, previous sibling, next sibling and all siblings of node $v$ respectively. 
+
+**Bucket**
+:   A bucket $b$ is a set of _consecutive sibling nodes_ where consecutiveness is defined by the ordering of node values. If $b$ contains a single node, then it is a _singleton_
+
+**End-biased Histograms**
+:   Let $H$ be a set of buckets over hierarchical dataset $T$. $H_v$ denotes the subset of $H$ which consists of buckets of $chld(v)$ $$H_v = \{b \in H \mid b \subseteq chld(v)\}$$ $H$ has the _end-biased property_ with respect to $v$ if either $H_v = \emptyset$ or 
+
+1. $H_v$ contains all nodes in $chld(v)$ $\left (chld(v) = \bigcup_{b \in H_v} b \right )$ and  
+2. there is at most one non-singleton bucket in $H_v$
+
+Additionally, $H$ _explicitly summarizes_ node $v$ if $\{v\}$ is a singleton bucket in $H$. $H$ is an _hierarchical end-biased histogram_ of $T$ if for every node $v$ in $T$
+
+1. $H$ has the end-biased property w.r.t. $v$ and
+2. if $H$ explicitly summarizes $v$, then $H$ also explicitly summarizes $par(v)$
+
+For instance $\{\{v_0\}, \{v_1\}, \{v_2\}, \{v_3, v_4\}, \{v_5\}\}$ is an end-biased histogram because $H_v = \emptyset$ for all $v \neq v_0$ and the two conditions are satisfied when $v = v_0$
+
+**Estimated Error of a Histogram**
+:   $b \in H$ is the _bucket_ of $v$, if $b$ is the bucket that contains the closest ancestor of $v$ ($bucket(v)$). $leaves(b)$ is the set of leaves $v$ for which $bucket(v) = b$
+
+_estimated value_ for $b$ given $H$ ($est(b)$) is average value of $\alpha(v)$ for all $v \in leaves(b)$
+
+$$err(H) = \sum_{v \in V_0} \left ( \alpha(v) - est(bucket(v))\right)^2$$
+**Given a data tree $T$ and a size bound $k$, find a histogram $H$ of $T$, such that $\lvert H \rvert \leq k$ and $err(H)$ is minimal**
+
+### Greedy Algorithm
+
+- Algorithm maintains result $H$ and a priority queue $Q$ of potential singleton buckets that can be added to $H$
+- Incrementally adds buckets from $Q$ to $H$ until the size of $H$ is $k$
