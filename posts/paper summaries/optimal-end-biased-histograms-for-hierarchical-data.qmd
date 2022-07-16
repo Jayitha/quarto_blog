@@ -3,7 +3,7 @@ title: "Optimal End-Biased Histograms for Hierarchical Data"
 author: "Jayitha Cherapanamjeri"
 date: "2022-07-14"
 description: "Behar, Rachel, and Sara Cohen. \"Optimal End-Biased Histograms for Hierarchical Data.\" Proceedings of the 29th ACM International Conference on Information & Knowledge Management. 2020"
-categories: [Rachel Beher, Sara Cohen, CIKM, 2020]
+categories: [Rachel Behar, Sara Cohen, CIKM, 2020]
 fig-cap-location: margin
 reference-location: margin
 citation-location: margin
